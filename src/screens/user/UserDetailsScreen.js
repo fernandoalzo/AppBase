@@ -80,7 +80,7 @@ export default function UserDetailsScreen({ navigation, route }) {
   };
 
   const update = async (userId, data) => {
-    const rtaUpdateUser = await updateUser(userId, data);
+    const rtaUpdateUser = await updateUser(userId, data, authToken);
     if (rtaUpdateUser.response.status === 200) {
       // si el usuario que se desactiva es el actual hacer logout
       if (

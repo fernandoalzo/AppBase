@@ -4,7 +4,8 @@ export function updateUserSchema() {
   return {
     username: Yup.string().required("El Username es obligatorio"),
     email: Yup.string().required("El Correo el obligatorio"),
-    cellPhone: Yup.string().required("El Telefono el obligatorio"),
+    phone: Yup.string().required("El Telefono el obligatorio"),
+    address: Yup.string().required("La direccion es obligatoria"),
     roleId: Yup.number()
       .integer()
       .required("el role del usuario es obligatorio"),

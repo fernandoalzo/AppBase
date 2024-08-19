@@ -28,10 +28,7 @@ export default function UserInfoCard({ userInfo }) {
         }}
       >
         <HStack space={[5, 5]} justifyContent="space-between">
-          <Avatar
-            size="50px"
-            source={require("./../../assets/img/user-profile-icon.png")}
-          />
+          <Avatar size="50px" source={require("./../../assets/img/user.png")} />
           <VStack>
             <Text
               width={screenWidth * 0.75}

@@ -29,7 +29,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "140d5de7-277b-4172-8d3c-8005a8749efb"
+        "projectId": "b6390586-d68f-42fc-a96a-c802cff8f0fc"
       }
     },
     "plugins": [
@@ -41,6 +41,7 @@
           }
         }
       ]
-    ]
+    ],
+    "owner": "fernandoalzo"
   }
 }

@@ -34,7 +34,8 @@ export default function UserUpdateInfoModal({
       formik.setValues({
         username: userInfo.username || "",
         email: userInfo.email || "",
-        cellPhone: userInfo.cellPhone || "",
+        phone: userInfo.phone || "",
+        address: userInfo.address || "",
         roleId: userInfo.role.id || 1,
         enabled: userInfo.enabled || false,
       });
@@ -45,7 +46,8 @@ export default function UserUpdateInfoModal({
     initialValues: {
       username: "",
       email: "",
-      cellPhone: "",
+      phone: "",
+      address: "",
       password: "",
       roleId: userInfo && userInfo.role ? userInfo.role.id : 1,
       enabled: false,
@@ -135,14 +137,25 @@ export default function UserUpdateInfoModal({
             <FormControl>
               <FormControl.Label>Telefono</FormControl.Label>
               <Input
-                value={formik.values.cellPhone}
+                value={formik.values.phone}
                 placeholder="Telefono..."
-                onChangeText={(cellPhone) =>
-                  formik.handleChange("cellPhone")(cellPhone)
+                onChangeText={(phone) => formik.handleChange("phone")(phone)}
+              />
+              {formik.errors.phone && (
+                <Text style={{ color: "red" }}>{formik.errors.phone}</Text>
+              )}
+            </FormControl>
+            <FormControl>
+              <FormControl.Label>Direccion</FormControl.Label>
+              <Input
+                value={formik.values.address}
+                placeholder="Direccion..."
+                onChangeText={(address) =>
+                  formik.handleChange("address")(address)
                 }
               />
-              {formik.errors.cellPhone && (
-                <Text style={{ color: "red" }}>{formik.errors.cellPhone}</Text>
+              {formik.errors.address && (
+                <Text style={{ color: "red" }}>{formik.errors.address}</Text>
               )}
             </FormControl>
             <FormControl isRequired>

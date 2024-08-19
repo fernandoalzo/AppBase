@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, Button } from "react-native";
+import { View, Image } from "react-native";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -9,30 +9,14 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import UsersNavigation from "./UsersNavigation";
 import AuthNavigation from "./AuthNavigation";
+import HomeNavigation from "./HomeNavigation";
+import { styles } from "./../components/users/styles/usersStyles";
 
 // auth
 import useAuth from "../hooks/useAuth";
 import AuthLogOutScreen from "./../screens/auth/AuthLogOutScreen";
 
 const Drawer = createDrawerNavigator();
-
-const styles = StyleSheet.create({
-  drawerItemStyle: {
-    borderBottomWidth: 3,
-    borderBottomColor: "#ccc",
-    backgroundColor: "#f9f9f9",
-  },
-  headerContainer: {
-    padding: 20,
-
-    alignItems: "center",
-    backgroundColor: "white",
-  },
-  headerImage: {
-    width: 150,
-    height: 150,
-  },
-});
 
 function CustomDrawerContent(props) {
   return (
@@ -68,6 +52,17 @@ export default function Navigation() {
         />
       ) : (
         <>
+          <Drawer.Screen
+            name="Home"
+            component={HomeNavigation}
+            options={{
+              tabBarLabel: "",
+              drawerIcon: ({ color, size }) => (
+                <Icon name="home-circle" color={color} size={size} />
+              ),
+              drawerItemStyle: styles.drawerItemStyle,
+            }}
+          />
           <Drawer.Screen
             name="Usuarios"
             component={UsersNavigation}

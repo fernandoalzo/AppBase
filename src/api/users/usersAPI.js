@@ -64,12 +64,12 @@ export async function createNewUser(userData, token) {
   }
 }
 
-export async function updateUser(userId, newUserData) {
+export async function updateUser(userId, newUserData, token) {
   try {
-    const url = `${API_HOST}/users/${userId}`;
+    const url = `${API_HOST}/users/update/${userId}`;
     const headers = {
       "Content-Type": "application/json",
-      // 'Authorization': `Bearer ${bearerToken}
+      Authorization: `Bearer ${token}`,
     };
     const response = await fetch(url, {
       method: "PATCH",
